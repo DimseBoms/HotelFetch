@@ -1,2 +1,2 @@
 # HotelFetch
-Python script to scrape hoteldata off popular booking sites
+Hotelfetch er et Python skript som henter hotelldata fra diverse nettsider for hotellbooking. For eksempel booking.com
