@@ -1,12 +1,19 @@
 import asyncio
 import json
 import re
+import os
 from collections import defaultdict
+from tkinter import W
+from tokenize import String
 from typing import Dict, List, TypedDict
 from urllib.parse import urlencode
 from requests.structures import CaseInsensitiveDict
 
 from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
+from dotenv import load_dotenv
+from pprint import pprint
+from datetime import datetime
+
 
 
 def create_search_page_url(
@@ -255,11 +262,20 @@ async def scrape_reviews(hotel_id: str, session: ScrapflyClient) -> List[dict]:
     return reviews
 
 
+# Sets checkin to today and checkout to today + 1 to get price per day
+def findCheckInOut() -> List[str]:
+    checkin = datetime.today().strftime('%Y-%m-%d')
+    checkout = (datetime.today + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+    return [checkin, checkout]
+
+
 # Example use:
 async def run():
-    with ScrapflyClient(key="YOUR_SCRAPFLY_KEY", max_concurrency=10) as session:
+    load_dotenv()
+    with ScrapflyClient(key=os.getenv("SCRAPFLY_API_KEY"), max_concurrency=10) as session:
         # we can find hotel previews
-        result_search = await scrape_search("London", session)
+        checkInOut = findCheckInOut()
+        result_search = await scrape_search("London", session, checkInOut[0], checkInOut[1])
         # and scrape hotel data itself
         result_hotels = await scrape_hotels(
             urls=["https://www.booking.com/hotel/gb/gardencourthotel.html"],
@@ -273,4 +289,6 @@ async def run():
 
 
 if __name__ == "__main__":
-    asyncio.run(run())
+    resultList = asyncio.run(run())
+    with open("./resultater.json", "w") as f:
+        json.dump(resultList, f, indent=4)
