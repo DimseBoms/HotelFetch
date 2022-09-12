@@ -1,0 +1,594 @@
+{
+    "https://www.booking.com/hotel/no/anker-hotel.html": {
+        "name": "Anker Hotel",
+        "location": "Grunerlokka, Oslo",
+        "score": "7.8",
+        "review_count": "9,594 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/219930059.webp?k=6b286a5588de0eeffc2ee1592ce08c6a2d2f6b7a08d4e91a5e9a9e07586cd865&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/radisson-blu-scandinavia-oslo.html": {
+        "name": "Radisson Blu Scandinavia Hotel, Oslo",
+        "location": "Majorstua, Oslo",
+        "score": "7.9",
+        "review_count": "5,813 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/232797590.webp?k=3384a6661a54001b3349599828b6504f8c859af8a348cd1a7f7507df078a7fc0&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/radisson-blu-plaza-oslo.html": {
+        "name": "Radisson Blu Plaza Hotel, Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.3",
+        "review_count": "9,422 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/232797043.webp?k=0e5bbf20bcf70ad10e92fa0284f2a3247399dee2e289d333d0a13fb2e18c2c7b&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/citybox-oslo.html": {
+        "name": "Citybox Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.2",
+        "review_count": "18,799 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/388743441.webp?k=a6a8f93102c7603a5421e351b8c30a4c155b4ee915aedb9be4b7bec2d6790eff&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/smarthotel-oslo.html": {
+        "name": "Smarthotel Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.8",
+        "review_count": "7,556 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/71392257.webp?k=3e53081d887b7e2dcde0f67b88fb353106395810d01efc25de0b43e44669be12&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/hotell-bondeheimen.html": {
+        "name": "Hotell Bondeheimen",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.4",
+        "review_count": "7,299 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/220526667.webp?k=3ba3e05c1f4ec5353c50afc4dd3dfcd20f0dfe81eb0b7e54d52bbb774f7fde50&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/my-city-home.html": {
+        "name": "Best Western Plus City Hotel",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.3",
+        "review_count": "1,546 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/338563264.webp?k=8fb6c0f21e3360fe2fc349a43164dead910fb4351e03f6e125e59a1c730e700c&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/oslo-vandrerhjem-haraldsheim.html": {
+        "name": "HI Oslo Haraldsheim",
+        "location": "Oslo",
+        "score": "8.0",
+        "review_count": "2,261 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/363427521.webp?k=9079e8ef8979401009e09b772da429ced1a58d527037a61daf444c2ec8422c96&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/radisson-blu-oslo-alna.html": {
+        "name": "Radisson Blu Hotel Oslo Alna",
+        "location": "Oslo",
+        "score": "7.4",
+        "review_count": "2,317 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/232836484.webp?k=0f403c2f64c7cbdbe2edae48bd8427eef0e703dcf0dcc066dfeefe1a40f068e7&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/comfort-xpress.html": {
+        "name": "Comfort Hotel Xpress Youngstorget",
+        "location": "Grunerlokka, Oslo",
+        "score": "7.5",
+        "review_count": "2,185 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/114749244.webp?k=8252cc94bb41a44a3b090d31b60a84ad4c0659ff0163cb91f5dbb3a458be7790&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/radisson-blu-nydalen.html": {
+        "name": "Radisson Blu Hotel Nydalen, Oslo",
+        "location": "Oslo",
+        "score": "8.0",
+        "review_count": "2,094 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/232797070.webp?k=1d412e0fdf64954fe12793b0ec333783fd6f14429b76f493601e31f21a602317&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/cochs-pensjonat.html": {
+        "name": "Cochs Pensjonat",
+        "location": "Frogner, Oslo",
+        "score": "8.2",
+        "review_count": "2,667 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/245538466.webp?k=609b441130ba63f8843bf8d577dcef471ad41996fc94384d53a59ea7618ea1a3&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/clarion-hotel-the-hub.html": {
+        "name": "Clarion Hotel The Hub",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.4",
+        "review_count": "5,097 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/184121340.webp?k=4902441087be3a865239969904c5d6032fe84f54879080ce65849561905252b0&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/park-inn-oslo.html": {
+        "name": "Park Inn by Radisson Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.1",
+        "review_count": "2,566 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/232810924.webp?k=e96c63218a2ad3ea2a6be405f5e756cf39077f12e8c6457439c9327fe5c855d6&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/verdandi-oslo.html": {
+        "name": "The Verdandi Hotel",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.8",
+        "review_count": "4,929 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/166026885.webp?k=53c7e89b4f90ca2bcec759ea28cfb5d6cb27cf49d18ca5f477e4adc4f128ebac&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/comfort-karl-johan.html": {
+        "name": "Comfort Hotel Karl Johan",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.5",
+        "review_count": "1,451 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/53607896.webp?k=d31f0db91d0f68c23c079824eaa4a454ebdd475cbf5d051793dd866e8808cd7a&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/saga-oslo-as.html": {
+        "name": "Saga Hotel Oslo; BW Premier Collection",
+        "location": "Frogner, Oslo",
+        "score": "8.6",
+        "review_count": "1,795 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/16765034.webp?k=84ec02b6a8008c42b7eb848e7b279fd6cc346516668b491886e1d8908adaec13&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/p-hotels-oslo.html": {
+        "name": "P-Hotels Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "6.8",
+        "review_count": "4,052 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/6684424.webp?k=c4ef8a723f9f36a41c7cbbb65afa1d03cb85b98af168b4ba174a865c855a5abf&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/anker-hostel.html": {
+        "name": "Anker Hostel",
+        "location": "Grunerlokka, Oslo",
+        "score": "7.4",
+        "review_count": "5,246 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/296658593.webp?k=55b9b2ab0ac2d0798d2c56f06f2745ad3230436e024b3b65b2d0a08ccd81af61&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/clarion-oslo.html": {
+        "name": "Clarion Hotel Oslo",
+        "location": "Gamle Oslo, Oslo",
+        "score": "8.8",
+        "review_count": "1,197 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/218269639.webp?k=798befa59d04a6d8ae8b5d9c0b91529763eb5ff68b7b842978ae355510221ce0&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/bjorvika-apartments.html": {
+        "name": "BJ\u00d8RVIKA APARTMENTS, Teaterplassen, Oslo city center",
+        "location": "Gamle Oslo, Oslo",
+        "score": "8.0",
+        "review_count": "1,728 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/306249178.webp?k=53a1a0ec79a3044a63f44990cdd6548fcad7fe52ee836052050e99016d0ec3cd&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/forenom-aparthotel-oslo-city.html": {
+        "name": "Forenom Aparthotel Oslo",
+        "location": "Gamle Oslo, Oslo",
+        "score": "7.8",
+        "review_count": "1,761 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/156074538.webp?k=c61520b1a6ee974d945a69102f589a25672f5d6f9dbe0467cfa60e9662ae963b&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/oslo-hostel-apartments.html": {
+        "name": "Central City Apartments",
+        "location": "Gamle Oslo, Oslo",
+        "score": "7.3",
+        "review_count": "1,511 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/77454666.webp?k=35038c6664b5e318af4a73696176339ef978b528d1b3f86006cda6a2a2712bc5&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/saga-oslo-central.html": {
+        "name": "K7 Hotel Oslo - formerly Saga Hotel Oslo Central",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.8",
+        "review_count": "1,287 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/61488391.webp?k=4eee3e4a97daab9715379a27fc039cd648b594777529572aaabd8f26754c822d&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/opera-apartments.html": {
+        "name": "BJ\u00d8RVIKA APARTMENTS, Opera Area, Oslo city center",
+        "location": "Gamle Oslo, Oslo",
+        "score": "8.1",
+        "review_count": "1,192 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/306433653.webp?k=ee222f52089aea5b9f6a4aad19d3461e214509717b3535d8cdbb71c55bd0e236&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-cecil.html": {
+        "name": "Thon Hotel Cecil",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.5",
+        "review_count": "1,151 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/169268291.webp?k=ace05497d976c7decbb1048b265e543bd56d3634f5eca8b26a0db1e1bfa93a50&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-gyldenlove.html": {
+        "name": "Thon Hotel Gyldenl\u00f8ve",
+        "location": "Frogner, Oslo",
+        "score": "8.1",
+        "review_count": "592 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/154948924.webp?k=4ab35ed0e22f995fa2ac04be298f8ce058583568a4b9034dc479b2dfdded07ab&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/frogner-house-apartments-arbins-gate-3.html": {
+        "name": "Frogner House Apartments - Arbins gate 3",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.1",
+        "review_count": "1,226 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/198661698.webp?k=137a77693c4ad1c68e28c7bf035ada28d2d5598ffb8bd08a434552e793ae2a81&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-rosenkrantz-oslo.html": {
+        "name": "Thon Hotel Rosenkrantz Oslo",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.9",
+        "review_count": "1,128 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/37094694.webp?k=5845b7ebe0ec718aeaa39cf42436b9dc9e97d3c57e6fe6bd7833947b37b1e327&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-linne.html": {
+        "name": "Thon Hotel Linne",
+        "location": "Oslo",
+        "score": "7.7",
+        "review_count": "638 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/384508643.webp?k=dd90bc1f5c76f20c5161355e621dfc8543987fcefd5da35d40c48ee5474072b6&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/frogner-house-apartments.html": {
+        "name": "Frogner House Apartments - Skovveien 8",
+        "location": "Frogner, Oslo",
+        "score": "8.3",
+        "review_count": "847 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/49655030.webp?k=dc051c76adc9ec1abd352e9face768a34363b9de355da39850e670fb15af289e&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/bogstad-camping.html": {
+        "name": "Topcamp Bogstad - Oslo",
+        "location": "Holmenkollen, Oslo",
+        "score": "7.5",
+        "review_count": "363 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/257826924.webp?k=3de6f4cc86f1a06b039255b6b4b41283bfdecc0ad5d931d2acf9985613c76473&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-edderkoppen.html": {
+        "name": "Scandic St. Olavs Plass",
+        "location": "St. Hanshaugen, Oslo",
+        "score": "7.8",
+        "review_count": "1,151 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/292222467.webp?k=62056190a1fc5fcd2c5ef0b141c1614c60dc37763343760fa8b222363aaf957f&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-spectrum.html": {
+        "name": "Thon Hotel Spectrum",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.3",
+        "review_count": "818 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/106630403.webp?k=3b6a474c909e913ed6582c34608adb3468c38610cdcfd6514f1b6eb31ea28476&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-slottsparken.html": {
+        "name": "Thon Hotel Slottsparken",
+        "location": "Frogner, Oslo",
+        "score": "8.3",
+        "review_count": "1,219 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/297032294.webp?k=7ae435c3a31e2341deb9d85efbd29235f20a2b293e1cadb5b8df36fd54deacc3&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/room-in-central-located-apartment.html": {
+        "name": "CITY CENTER Penthouse apartment",
+        "location": "Gamle Oslo, Oslo",
+        "score": "7.7",
+        "review_count": "32 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/344063400.webp?k=251daf0866cb6f7c0ad2acde6a17eaadde239309770339c814bb277312d038d0&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/clarion-collection-savoy.html": {
+        "name": "Clarion Collection Hotel Savoy",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.8",
+        "review_count": "468 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/76238089.webp?k=cbdda7a37585da4a97a566d32e3beb41af881a64e2957ee98838e4695adf5995&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/keybutler-apartments-ringnes-park.html": {
+        "name": "Keybutler Apartments Ringnes Park",
+        "location": "Oslo",
+        "score": "",
+        "review_count": "",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/385682324.webp?k=b7658de51b24170abccfa21fc127d028e635ea0820f6b9921b426c68d19f2a6c&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/clarion-collection-hotel-christiania-theater.html": {
+        "name": "Hotel Christiania Teater",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.1",
+        "review_count": "351 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/78853732.webp?k=cfdf4f08d3e05f5ccb0f6c15ab00315174f2acbeff88d0dd17656fc418a46183&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/the-thief.html": {
+        "name": "The Thief",
+        "location": "Frogner, Oslo",
+        "score": "8.6",
+        "review_count": "254 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/19172201.webp?k=fe2820970e629b0d43e67cc600a97d352f97899cf9298b252ed6a5cd693c5ec7&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/majorstuen-apartments.html": {
+        "name": "Saga Apartments Oslo",
+        "location": "Frogner, Oslo",
+        "score": "8.5",
+        "review_count": "765 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/132888464.webp?k=bd2b7ae7c7d570ba50196023ce4c091392ded81228e43b7ba7644558a600e6e4&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/frogner-house-hotel-norum.html": {
+        "name": "Frogner House Apartments - Bygd\u00f8y All\u00e9 53",
+        "location": "Frogner, Oslo",
+        "score": "8.0",
+        "review_count": "889 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/4075639.webp?k=bedd59b8b69db6f59d3d7d4486a930b8973a39039544d52c851ec14371b7ea04&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/oslo-apartments-as.html": {
+        "name": "Forenom Serviced Apartments Oslo Royal Park",
+        "location": "Frogner, Oslo",
+        "score": "7.4",
+        "review_count": "763 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/182499077.webp?k=759a17501f9823d61b3ee14dee6302416badf46a605494cff933fe582df20361&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/sommerro-oslo-kommune1.html": {
+        "name": "Sommerro",
+        "location": "Frogner, Oslo",
+        "score": "10",
+        "review_count": "1 review",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/328325828.webp?k=1b9bffdd3c73310a0d19ab4b4a7c40af00af3b5441124c970891cca394d1315a&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/nordic-hosts-dronningens-gate-12.html": {
+        "name": "Nordic Host - Dronningens Gate 12",
+        "location": "Oslo City Centre, Oslo",
+        "score": "6.8",
+        "review_count": "35 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/68688540.webp?k=92b3f90ee8cd13fb7907d8d121c9d1294e24f8c1ca1ac1cf8eefd5b5c6c724c6&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/nordic-host-tollbugata-13.html": {
+        "name": "Nordic Host - Tollbugata 13",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.5",
+        "review_count": "47 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/186191274.webp?k=936eb2876173de8f5b487da6b43f89062be40b811651b6b3749aabc0ba57221d&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/budget-room-aker-brygge.html": {
+        "name": "Budget Room Aker Brygge",
+        "location": "Frogner, Oslo",
+        "score": "8.0",
+        "review_count": "26 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/321053035.webp?k=8c213778ad8c7a56fdda4923e146d914a0fc02f4c5736a52d28a4643fab9ac4e&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/frogner-house-inkognitogata.html": {
+        "name": "Frogner House Apartments - Colbj\u00f8rnsens gate 3",
+        "location": "Frogner, Oslo",
+        "score": "8.0",
+        "review_count": "59 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/326063262.webp?k=69ba2c48b8716f737cc51da936a45a6df9b984ffdc2daecc29a95c7561b8dfed&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/quality-33.html": {
+        "name": "Quality Hotel 33",
+        "location": "Oslo",
+        "score": "7.3",
+        "review_count": "663 reviews",
+        "stars": 0,
+        "image": "https://cf.bstatic.com/xdata/images/hotel/square200/98411274.webp?k=ff34bfc175266043a284030512680ea1651f83513b7e992a581e74c266a822c8&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/anker-apartments.html": {
+        "name": "Anker Apartment \u2013 Gr\u00fcnerl\u00f8kka",
+        "location": "Grunerlokka, Oslo",
+        "score": "7.4",
+        "review_count": "3,886 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/288791002.webp?k=f64c272eb40bfebda823e983b698fc8e54a37b156f47495e2fadc1f775e5714f&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-victoria.html": {
+        "name": "Scandic Victoria",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.6",
+        "review_count": "2,606 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292224133.webp?k=dc7a7f75727c714c8e508c0c198b79c1e3e3a003aea0190d126efcd2f062ec18&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-holmenkollen-park.html": {
+        "name": "Scandic Holmenkollen Park",
+        "location": "Holmenkollen, Oslo",
+        "score": "8.0",
+        "review_count": "896 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292226648.webp?k=afead7bd190f7a3f6fbf221e2a3bb3fc7b1363335358f4e3dc166060f1ecd8a7&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-karl-johan.html": {
+        "name": "Scandic Karl Johan",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.3",
+        "review_count": "1,411 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292227840.webp?k=52aa32e8867fb71d19d2c5c4d6c99b2c830d01f681330d8701462353008df4f2&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/radisson-red-oslo-okern-portal.html": {
+        "name": "Radisson RED Oslo Okern",
+        "location": "Grunerlokka, Oslo",
+        "score": "9.1",
+        "review_count": "308 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/377883920.webp?k=1f0a3ca90f7d497024d4c0ef72f4ddc6529aae7809173e7032e64eec170037cc&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/thon-vika-atrium.html": {
+        "name": "Thon Hotel Vika Atrium",
+        "location": "Frogner, Oslo",
+        "score": "8.4",
+        "review_count": "528 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/11796964.webp?k=ce72d044172e48e519c4c956557784bd2bda4d9572c3be260a2863e28b61222b&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/norlandia-karl-johan-hotell.html": {
+        "name": "Karl Johan Hotel",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.6",
+        "review_count": "2,107 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/270004608.webp?k=60dd53f0c6203e3993dd84b81e7feeb35ccbb0e914f665b12eefdbe722d1a029&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/comfort-xpress-central-station.html": {
+        "name": "Comfort Hotel Xpress Central Station",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.9",
+        "review_count": "2,217 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/176893606.webp?k=0ac0761619963a0cf777762e06f01fe5cba4ef07940977add85e5d640c5df1f7&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-holberg.html": {
+        "name": "Scandic Holberg",
+        "location": "Frogner, Oslo",
+        "score": "7.4",
+        "review_count": "1,412 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292225875.webp?k=f1d63fe7f3ee1441d2d0b268fba8aa9feb9399e56219654c0a40141e035c9fd0&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/quality-hasle-linie.html": {
+        "name": "Quality Hotel Hasle Linie",
+        "location": "Grunerlokka, Oslo",
+        "score": "8.3",
+        "review_count": "609 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/320889160.webp?k=f5ea2773ce0b80e1b8624017c10aa972d9919af31a2543f0bf7d41ff9c0a2693&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/continental.html": {
+        "name": "Hotel Continental",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.9",
+        "review_count": "560 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/100567319.webp?k=ef3c28aa49ac9bdefa4b502add1249858f511fdd59fa26aa456be61215685be1&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/carlton-oslo-guldsmeden.html": {
+        "name": "Hotel Oslo Guldsmeden",
+        "location": "Frogner, Oslo",
+        "score": "8.0",
+        "review_count": "477 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/175846480.webp?k=c3675c6ebddc4ea9ef9e2ecc7ee223ea325c6f30fd0c16ca678fd06baa90aac9&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-kna.html": {
+        "name": "Scandic Solli",
+        "location": "Frogner, Oslo",
+        "score": "7.5",
+        "review_count": "1,149 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292222946.webp?k=ff3f7891a53eb4879f6f36f69302eec9e9123416f62622823ec9363902a718e3&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-sjolyst.html": {
+        "name": "Scandic Sj\u00f8lyst",
+        "location": "Oslo",
+        "score": "8.4",
+        "review_count": "1,305 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292223026.webp?k=2da5440ca57a700241a520944343fd8039134b3a52b97c7ec6fff9672c25840b&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-oslo.html": {
+        "name": "Scandic Oslo City",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.7",
+        "review_count": "1,362 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292223679.webp?k=74129a55e04c204e9f4e776d5015d62b8ceecccad3c72f259b409128486e61f8&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/soria-moria-hotell-og-konferansesenter.html": {
+        "name": "Soria Moria Hotell",
+        "location": "Holmenkollen, Oslo",
+        "score": "7.9",
+        "review_count": "794 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/54418615.webp?k=ecf915a05bfe0239fbf834147af5b9eb968d4887e415a8d49769dc1b05fdd971&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/oslo-apartments-dronningensgate-15.html": {
+        "name": "Forenom Serviced Apartments Oslo Central",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.6",
+        "review_count": "476 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/134287013.webp?k=1723abb9b6f81a813ab4c9f94edb1abec3d0ee8f17bc198d3bc1206114650253&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-grensen.html": {
+        "name": "Scandic Grensen",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.7",
+        "review_count": "897 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292227639.webp?k=99ef5b268d5540073ebbce786ecdc33d634a4eefac7e3408cf76e8d103b027cb&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-byporten.html": {
+        "name": "Scandic Byporten",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.0",
+        "review_count": "2,301 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292222080.webp?k=8ad7f25d8eb718cb30ef88751948da3405bcfb85da62292162d6cfbbe38e7d6f&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-vulkan.html": {
+        "name": "Scandic Vulkan",
+        "location": "Grunerlokka, Oslo",
+        "score": "7.9",
+        "review_count": "918 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292223155.webp?k=67fd65043671653d7d894418d97f4cbed6f9671d785308ebc4247f36436648d7&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/villa-international.html": {
+        "name": "Villa Internationals",
+        "location": "Frogner, Oslo",
+        "score": "8.5",
+        "review_count": "30 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/383436928.webp?k=83cf05d2d9ecc75bfcf53e8751a27daff3eaa7f342d1550bdb1191d8e0bdf6ac&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/scandic-helsfyr.html": {
+        "name": "Scandic Helsfyr",
+        "location": "Gamle Oslo, Oslo",
+        "score": "7.7",
+        "review_count": "245 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/275049119.webp?k=1c56d6ae17952c7df897a0bbee42fb60385de0fc93616258c47e870f0996d0e9&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/bristol.html": {
+        "name": "Hotel Bristol",
+        "location": "Oslo City Centre, Oslo",
+        "score": "9.0",
+        "review_count": "1,072 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/242552913.webp?k=74afe99bf80747c2981e68846305a1974ff3bb118dc2598f1f4e2ed074ccce94&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/first-millennium.html": {
+        "name": "First Hotel Millennium",
+        "location": "Oslo City Centre, Oslo",
+        "score": "7.5",
+        "review_count": "4,422 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/299126070.webp?k=565d9421f9a50fbc454c05e5be7368137c278ccd220adc9599629edcca1c51a1&o=&s=1"
+    },
+    "https://www.booking.com/hotel/no/grand.html": {
+        "name": "Grand Hotel",
+        "location": "Oslo City Centre, Oslo",
+        "score": "8.2",
+        "review_count": "1,474 reviews",
+        "stars": 0,
+        "image": "https://t-cf.bstatic.com/xdata/images/hotel/square200/292228454.webp?k=ed81435ac90ddbf3caad57edb2dbd0e940bcec896b3b06e41a86ad5f06e7ddad&o=&s=1"
+    }
+}

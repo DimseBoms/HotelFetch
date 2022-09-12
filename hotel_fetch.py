@@ -2,6 +2,7 @@ import asyncio
 import json
 import re
 import os
+import datetime
 from collections import defaultdict
 from tkinter import W
 from tokenize import String
@@ -12,7 +13,6 @@ from requests.structures import CaseInsensitiveDict
 from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
 from dotenv import load_dotenv
 from pprint import pprint
-from datetime import datetime
 
 
 
@@ -262,33 +262,32 @@ async def scrape_reviews(hotel_id: str, session: ScrapflyClient) -> List[dict]:
     return reviews
 
 
-# Sets checkin to today and checkout to today + 1 to get price per day
-def findCheckInOut() -> List[str]:
-    checkin = datetime.today().strftime('%Y-%m-%d')
-    checkout = (datetime.today + datetime.timedelta(days=1)).strftime('%Y-%m-%d')
-    return [checkin, checkout]
-
-
 # Example use:
 async def run():
     load_dotenv()
     with ScrapflyClient(key=os.getenv("SCRAPFLY_API_KEY"), max_concurrency=10) as session:
         # we can find hotel previews
-        checkInOut = findCheckInOut()
-        result_search = await scrape_search("London", session, checkInOut[0], checkInOut[1])
-        # and scrape hotel data itself
-        result_hotels = await scrape_hotels(
-            urls=["https://www.booking.com/hotel/gb/gardencourthotel.html"],
-            session=session,
-            # get pricing data of last 7 days
-            price_start_dt="2022-05-25",
-            price_n_days=7,
+        result_search = await scrape_search(
+            "Oslo",
+            session,
+            datetime.date.today().strftime('%Y-%m-%d'), # checkin today
+            (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%d') # checkout tomorrow
         )
-        result_reviews = await scrape_reviews("gardencourthotel", session)
-        return result_search, result_hotels, result_reviews
+
+        # # and scrape hotel data itself
+        # result_hotels = await scrape_hotels(
+        #     urls=["https://www.booking.com/hotel/gb/gardencourthotel.html"],
+        #     session=session,
+        #     # get pricing data of last 7 days
+        #     price_start_dt="2022-05-25",
+        #     price_n_days=7,
+        # )
+        # result_reviews = await scrape_reviews("gardencourthotel", session)
+        # return result_search, result_hotels, result_reviews
+        return result_search
 
 
 if __name__ == "__main__":
     resultList = asyncio.run(run())
-    with open("./resultater.json", "w") as f:
+    with open("./data/results/resultater.json", "w") as f:
         json.dump(resultList, f, indent=4)
