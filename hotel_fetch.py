@@ -150,6 +150,7 @@ async def scrape_hotels(urls: List[str], session: ScrapflyClient, price_start_dt
         url += "?" + urlencode({"cur_currency": "usd"})
         _scrapfly_session = ""
         result_hotel = await session.async_scrape(ScrapeConfig(url, country="US"))
+        pprint(url)
         hotel = parse_hotel(result_hotel)
         hotel["url"] = str(result_hotel.context["url"])
 
@@ -262,32 +263,65 @@ async def scrape_reviews(hotel_id: str, session: ScrapflyClient) -> List[dict]:
     return reviews
 
 
-# Example use:
-async def run():
-    load_dotenv()
-    with ScrapflyClient(key=os.getenv("SCRAPFLY_API_KEY"), max_concurrency=10) as session:
-        # we can find hotel previews
-        result_search = await scrape_search(
-            "Oslo",
-            session,
-            datetime.date.today().strftime('%Y-%m-%d'), # checkin today
-            (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%d') # checkout tomorrow
-        )
+# populates hotel listings for a given search
+async def fetch_listings(query_str: str):
+    hotel_listings = await scrape_search(query_str, session)
+    return hotel_listings
 
-        # # and scrape hotel data itself
-        # result_hotels = await scrape_hotels(
-        #     urls=["https://www.booking.com/hotel/gb/gardencourthotel.html"],
-        #     session=session,
-        #     # get pricing data of last 7 days
-        #     price_start_dt="2022-05-25",
-        #     price_n_days=7,
-        # )
-        # result_reviews = await scrape_reviews("gardencourthotel", session)
-        # return result_search, result_hotels, result_reviews
-        return result_search
+
+# Collects information about hotel listings found with a given query.
+# Since ScrapFly has a bug where it cannot keep track of scraping sessions
+# within the `scrape_hotels()` method. This process has to be done manually,
+# and as seen below the limit is 5 scraping instances at one time. If I try
+# to scrape with more than 5 instances at one given time with this method
+# the scraping returns empty objects and crashes the program.
+async def drill_listings(_hotel_listings):
+
+    # splits urls in parts of 5 and inserts them in a meta list
+    def create_nested_list(urls_list):
+        chunk_size = 5
+        return [urls_list[i:i+chunk_size] for i in range(0, len(urls_list), chunk_size)]
+
+    # scrapes hotels, but takes only five at a time
+    async def drill_next_five(_urls_dict):
+        result_hotels = await scrape_hotels(
+        urls=_urls_dict,
+        session=session,
+        price_start_dt=datetime.date.today().strftime('%Y-%m-%d'), # start date: checkin today
+        price_n_days=7, # how many nights to stay
+        )
+        return result_hotels
+
+    # extract URLs
+    urls_list = []
+    for url, data in _hotel_listings.items():
+        urls_list.append(url)
+
+    chunked_lists = create_nested_list(urls_list)
+    result = []
+    for nested_list in chunked_lists:
+        result.append(await drill_next_five(nested_list))
+
+    return result
+
+
+# first search to find hotel listings and their urls
+async def run():
+    hotel_listings_task = fetch_listings("Jessheim") # starts fetching hotel listings
+    hotel_listings = await hotel_listings_task # waits for hotel listings to populate
+    print("Hotel listings:")
+    pprint(hotel_listings)
+    result_hotels = await drill_listings(hotel_listings) # extracts information about listings
+    print("Result hotels:")
+    pprint(result_hotels)
+    with open("./data/results/resultater.json", "w") as f:
+            json.dump(result_hotels, f, indent=4)
+
+
 
 
 if __name__ == "__main__":
-    resultList = asyncio.run(run())
-    with open("./data/results/resultater.json", "w") as f:
-        json.dump(resultList, f, indent=4)
+    # loads environment variables and initializes ScrapFly session
+    load_dotenv()
+    with ScrapflyClient(key=os.getenv("SCRAPFLY_API_KEY"), max_concurrency=5) as session:
+        asyncio.run(run()) # initializes scraping
