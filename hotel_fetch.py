@@ -328,6 +328,8 @@ def read_city_list():
 
 
 # first search to find hotel listings and their urls
+# TODO: add memory function to remember the last scraped city so the scraper
+#       is able to continue from the last added city.
 async def run():
     cities_list = read_city_list()
     final_result = []
