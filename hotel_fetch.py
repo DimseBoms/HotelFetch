@@ -297,10 +297,17 @@ async def drill_listings(_hotel_listings):
     for url, data in _hotel_listings.items():
         urls_list.append(url)
 
+    # gathers data
     chunked_lists = create_nested_list(urls_list)
-    result = []
+    drill_results = []
     for nested_list in chunked_lists:
-        result.append(await drill_next_five(nested_list))
+        drill_results.append(await drill_next_five(nested_list))
+
+    # reorganizes result into one list instead of sublists
+    result = []
+    for drill_result in drill_results:
+        for listing in drill_result:
+            result.append(listing)
 
     return result
 
