@@ -13,6 +13,7 @@ from requests.structures import CaseInsensitiveDict
 from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
 from dotenv import load_dotenv
 from pprint import pprint
+from pandas import *
 
 
 
@@ -312,15 +313,30 @@ async def drill_listings(_hotel_listings):
     return result
 
 
+def read_city_list():
+    # reading CSV file
+    data = read_csv("./data/worldcities.csv")
+    
+    # converting column data to list
+    city = data['city'].tolist()
+    city_ascii = data['city_ascii'].tolist()
+    lat = data['lat'].tolist()
+    lng = data['lng'].tolist()
+    country = data['country'].tolist()
+    
+    return city
+
+
 # first search to find hotel listings and their urls
 async def run():
-    hotel_listings_task = fetch_listings("Jessheim") # starts fetching hotel listings
-    hotel_listings = await hotel_listings_task # waits for hotel listings to populate
-    print("Hotel listings:")
-    pprint(hotel_listings)
-    result_hotels = await drill_listings(hotel_listings) # extracts information about listings
-    print("Result hotels:")
-    pprint(result_hotels)
+    cities_list = read_city_list()
+    final_result = []
+    for city in cities_list:
+        print(f"fetching data for: {city}...")
+        hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
+        result_hotels = await drill_listings(hotel_listings) # extracts information about listings
+        for hotel_data in result_hotels: # appends data from current city to the final result
+            final_result.append(hotel_data)
     with open("./data/results/resultater.json", "w") as f:
             json.dump(result_hotels, f, indent=4)
 
