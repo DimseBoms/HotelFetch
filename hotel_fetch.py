@@ -3,18 +3,17 @@ import json
 import re
 import os
 import datetime
+import traceback
 from collections import defaultdict
 from tkinter import W
 from tokenize import String
 from typing import Dict, List, TypedDict
 from urllib.parse import urlencode
 from requests.structures import CaseInsensitiveDict
-
 from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
 from dotenv import load_dotenv
 from pprint import pprint
 from pandas import *
-
 
 
 def create_search_page_url(
@@ -129,11 +128,13 @@ def parse_hotel(result: ScrapeApiResponse) -> Hotel:
     css_first = lambda selector: result.selector.css(selector).get("")
     lat, lng = css_first(".show_map_hp_link::attr(data-atlas-latlng)").split(",")
     features = defaultdict(list)
+    #title_class_name = re.findall(r"[A-Za-z0-9]+ pp-header__title", result.content)[0]
+    #print(title_class_name)
     for feat_box in result.selector.css(".hotel-facilities-group"):
         type_ = "".join(feat_box.css(".bui-title__text::text").getall()).strip()
         features[type_].extend([f.strip() for f in feat_box.css(".bui-list__description::text").getall() if f.strip()])
     data = {
-        "title": css("h2#hp_hotel_name::text"),
+        "title": css(f"h2.pp-header__title::text"),
         "description": css("div#property_description_content ::text", "\n"),
         "address": css(".hp_address_subtitle::text"),
         "lat": lat,
@@ -315,14 +316,14 @@ async def drill_listings(_hotel_listings):
 
 def read_city_list():
     # reading CSV file
-    data = read_csv("./data/worldcities.csv")
+    data = read_csv("./data/filtered_worldcities.csv")
     
     # converting column data to list
     city = data['city'].tolist()
-    city_ascii = data['city_ascii'].tolist()
-    lat = data['lat'].tolist()
-    lng = data['lng'].tolist()
-    country = data['country'].tolist()
+    # city_ascii = data['city_ascii'].tolist()
+    # lat = data['lat'].tolist()
+    # lng = data['lng'].tolist()
+    # country = data['country'].tolist()
     
     return city
 
@@ -331,15 +332,24 @@ def read_city_list():
 # TODO: add memory function to remember the last scraped city so the scraper
 #       is able to continue from the last added city.
 async def run():
+    first_run = True
+    filename = f"./data/results/result_{datetime.datetime.now()}.json"
     cities_list = read_city_list()
     final_result = []
     for city in cities_list:
-        print(f"fetching data for: {city}...")
-        hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
-        result_hotels = await drill_listings(hotel_listings) # extracts information about listings
-        for hotel_data in result_hotels: # appends data from current city to the final result
-            final_result.append(hotel_data)
-    with open("./data/results/resultater.json", "w") as f:
+        try:
+            print(f"fetching data for: {city}...")
+            hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
+            result_hotels = await drill_listings(hotel_listings) # extracts information about listings
+            for hotel_data in result_hotels: # appends data from current city to the final result
+                print(hotel_data)
+                final_result.append(hotel_data)
+                with open(filename, "w") as f:
+                    json.dump(final_result, f, indent=4)
+        except Exception as e:
+            print(f"No hotels found in {city}")
+            traceback.print_exc()
+    with open("./data/results/final_result.json", "w") as f:
             json.dump(result_hotels, f, indent=4)
 
 
