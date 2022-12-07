@@ -29,7 +29,6 @@ status_active = False
 def update_status():
     while status_active:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print()
         print(f"Current country: {current_country}")
         print(f"Current city: {current_city}")
         if (current_cities_count == 0):
@@ -37,7 +36,7 @@ def update_status():
         else:
             current_percent = round(current_cities_count/total_cities_count)
         print()
-        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count} cities fetched.")
+        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count}) cities fetched.")
         print()
         print(f"Time elapsed: {str(datetime.timedelta(seconds=(time.time() - start_time))).split(sep='.')[0]}")
         time.sleep(1)
@@ -408,8 +407,12 @@ async def run():
                 pass
                 #print(f"no hotels found in {city} in {country}")
                 #traceback.print_exc()
-        with open("./data/results/final_result.json", "w") as f:
-                json.dump(final_result, f, indent=4)
+    with open("./data/results/final_result.json", "w") as f:
+            json.dump(final_result, f, indent=4)
+    global status_active
+    status_active = False
+    print()
+    print("Finished.")
 
 
 
