@@ -21,9 +21,12 @@ from threading import Thread
 start_time = 0
 total_cities_count = 0
 current_cities_count = 0
+total_countries_count = 0
+current_countries_count = 0
 current_country = ""
 current_city = ""
 current_url = ""
+listings_count = 0
 status_active = False
 
 def update_status():
@@ -31,14 +34,19 @@ def update_status():
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Current country: {current_country}")
         print(f"Current city: {current_city}")
+        print()
+        print(f"({current_countries_count}/{total_countries_count}) countries")
+        print(f"({current_cities_count}/{total_cities_count}) cities")
+        print(f"{listings_count} listings fetched")
+        print()
         if (current_cities_count == 0):
             current_percent = 0
         else:
             current_percent = round((current_cities_count/total_cities_count) * 100)
-        print()
-        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count}) cities fetched")
+        print(f"{current_percent}% complete.")
         print()
         print(f"Time elapsed: {str(datetime.timedelta(seconds=(time.time() - start_time))).split(sep='.')[0]}")
+        print()
         time.sleep(1)
 
 def start_status():
@@ -356,7 +364,9 @@ def read_worldcities():
     # reading CSV file
     data = read_csv("./data/filtered_worldcities.csv")
     global total_cities_count
+    global total_countries_count
     total_cities_count = data.shape[0]
+    total_countries_count = data.country.nunique()
     # converting column data to list
     #cities = data['city'].tolist()
     # city_ascii = data['city_ascii'].tolist()
@@ -382,12 +392,15 @@ async def run():
     global current_cities_count
     global current_city
     global current_country
+    global listings_count
+    global current_countries_count
     start_status()
     filename = f"./data/results/result_{datetime.datetime.now()}.json"
     country_cities_dict = read_worldcities()
     final_result = {}
     for country in country_cities_dict.keys():
         current_country = country
+        current_countries_count += 1
         final_result[country] = {} # creates empty dict to add items to
         for city in country_cities_dict[country]:
             current_city = city
@@ -396,12 +409,11 @@ async def run():
                 hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
                 result_hotels = await drill_listings(hotel_listings) # extracts information about listings
                 final_result[country][city] = [] # creates empty list to append items to
-                i = 0
                 for hotel_data in result_hotels: # appends data from current city to the final result
                     final_result[country][city].append(hotel_data)
                     with open(filename, "w") as f:
                         json.dump(final_result, f, indent=4)
-                    i+=1
+                    listings_count += 1
                 #print(f"fetched {i} listings from {city} in {country}")
             except Exception as e:
                 pass
