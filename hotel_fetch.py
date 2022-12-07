@@ -36,7 +36,7 @@ def update_status():
         else:
             current_percent = round(current_cities_count/total_cities_count)
         print()
-        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count}) cities fetched.")
+        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count}) cities fetched")
         print()
         print(f"Time elapsed: {str(datetime.timedelta(seconds=(time.time() - start_time))).split(sep='.')[0]}")
         time.sleep(1)
