@@ -4,6 +4,7 @@ import re
 import os
 import datetime
 import traceback
+import time
 from collections import defaultdict
 from tkinter import W
 from tokenize import String
@@ -14,7 +15,44 @@ from scrapfly import ScrapeApiResponse, ScrapeConfig, ScrapflyClient
 from dotenv import load_dotenv
 from pprint import pprint
 from pandas import *
+from threading import Thread
 
+
+start_time = 0
+total_cities_count = 0
+current_cities_count = 0
+current_country = ""
+current_city = ""
+current_url = ""
+status_active = False
+
+def update_status():
+    while status_active:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print()
+        print(f"Current country: {current_country}")
+        print(f"Current city: {current_city}")
+        if (current_cities_count == 0):
+            current_percent = 0
+        else:
+            current_percent = round(current_cities_count/total_cities_count)
+        print()
+        print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count} cities fetched.")
+        print()
+        print(f"Time elapsed: {str(datetime.timedelta(seconds=(time.time() - start_time))).split(sep='.')[0]}")
+        time.sleep(1)
+
+def start_status():
+    global start_time
+    global status_active
+    start_time = time.time()
+    status_active = True
+    th = Thread(target=update_status)
+    th.daemon = True
+    th.start()
+
+def stop_status():
+    status_active = False
 
 def create_search_page_url(
     query,
@@ -154,7 +192,6 @@ async def scrape_hotels(urls: List[str], session: ScrapflyClient, price_start_dt
         url += "?" + urlencode({"cur_currency": "usd"})
         _scrapfly_session = ""
         result_hotel = await session.async_scrape(ScrapeConfig(url, country="US"))
-        pprint(url)
         hotel = parse_hotel(result_hotel)
         hotel["url"] = str(result_hotel.context["url"])
 
@@ -319,15 +356,15 @@ async def drill_listings(_hotel_listings):
 def read_worldcities():
     # reading CSV file
     data = read_csv("./data/filtered_worldcities.csv")
-    
+    global total_cities_count
+    total_cities_count = data.shape[0]
     # converting column data to list
-    cities = data['city'].tolist()
+    #cities = data['city'].tolist()
     # city_ascii = data['city_ascii'].tolist()
     # lat = data['lat'].tolist()
     # lng = data['lng'].tolist()
-    countries = data['country'].tolist()
+    #countries = data['country'].tolist()
     res_dict = {}
-    #TODO: Make Dict of country: [cities]
     # creates key -> value structure with {country: [cities]}
     for index in data.index:
         #print(data['city_ascii'][index], data['country'][index])
@@ -343,13 +380,19 @@ def read_worldcities():
 # TODO: add memory function to remember the last scraped city so the scraper
 #       is able to continue from the last added city.
 async def run():
-    first_run = True
+    global current_cities_count
+    global current_city
+    global current_country
+    start_status()
     filename = f"./data/results/result_{datetime.datetime.now()}.json"
     country_cities_dict = read_worldcities()
     final_result = {}
     for country in country_cities_dict.keys():
+        current_country = country
         final_result[country] = {} # creates empty dict to add items to
         for city in country_cities_dict[country]:
+            current_city = city
+            current_cities_count+=1
             try:
                 hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
                 result_hotels = await drill_listings(hotel_listings) # extracts information about listings
@@ -360,9 +403,10 @@ async def run():
                     with open(filename, "w") as f:
                         json.dump(final_result, f, indent=4)
                     i+=1
-                print(f"fetched {i} hotels from {city} in {country}")
+                #print(f"fetched {i} listings from {city} in {country}")
             except Exception as e:
-                print(f"no hotels found in {city} in {country}")
+                pass
+                #print(f"no hotels found in {city} in {country}")
                 #traceback.print_exc()
         with open("./data/results/final_result.json", "w") as f:
                 json.dump(final_result, f, indent=4)
