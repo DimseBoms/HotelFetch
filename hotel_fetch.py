@@ -49,6 +49,8 @@ def parse_search_total_results(result: ScrapeApiResponse) -> int:
     # parse total amount of pages from heading1 text:
     # e.g. "London: 1,232 properties found"
     total_results = int(result.selector.css("h1").re("([\d,]+) properties found")[0].replace(",", ""))
+    if total_results > 50:
+        return 50 # limits number of hotels per city
     return total_results
 
 
@@ -314,18 +316,27 @@ async def drill_listings(_hotel_listings):
     return result
 
 
-def read_city_list():
+def read_worldcities():
     # reading CSV file
     data = read_csv("./data/filtered_worldcities.csv")
     
     # converting column data to list
-    city = data['city'].tolist()
+    cities = data['city'].tolist()
     # city_ascii = data['city_ascii'].tolist()
     # lat = data['lat'].tolist()
     # lng = data['lng'].tolist()
-    # country = data['country'].tolist()
-    
-    return city
+    countries = data['country'].tolist()
+    res_dict = {}
+    #TODO: Make Dict of country: [cities]
+    # creates key -> value structure with {country: [cities]}
+    for index in data.index:
+        #print(data['city_ascii'][index], data['country'][index])
+        if (data['country'][index] in res_dict.keys()): # if country key already exists in dict and has sublist
+            res_dict[data['country'][index]].append(data['city_ascii'][index]) # append city to list
+        else:
+            res_dict[data['country'][index]] = [data['city_ascii'][index]] # if not then create new list and insert the city
+
+    return res_dict
 
 
 # first search to find hotel listings and their urls
@@ -334,23 +345,27 @@ def read_city_list():
 async def run():
     first_run = True
     filename = f"./data/results/result_{datetime.datetime.now()}.json"
-    cities_list = read_city_list()
-    final_result = []
-    for city in cities_list:
-        try:
-            print(f"fetching data for: {city}...")
-            hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
-            result_hotels = await drill_listings(hotel_listings) # extracts information about listings
-            for hotel_data in result_hotels: # appends data from current city to the final result
-                print(hotel_data)
-                final_result.append(hotel_data)
-                with open(filename, "w") as f:
-                    json.dump(final_result, f, indent=4)
-        except Exception as e:
-            print(f"No hotels found in {city}")
-            traceback.print_exc()
-    with open("./data/results/final_result.json", "w") as f:
-            json.dump(result_hotels, f, indent=4)
+    country_cities_dict = read_worldcities()
+    final_result = {}
+    for country in country_cities_dict.keys():
+        final_result[country] = {} # creates empty dict to add items to
+        for city in country_cities_dict[country]:
+            try:
+                hotel_listings = await fetch_listings(city) # starts fetching hotel listings for current city
+                result_hotels = await drill_listings(hotel_listings) # extracts information about listings
+                final_result[country][city] = [] # creates empty list to append items to
+                i = 0
+                for hotel_data in result_hotels: # appends data from current city to the final result
+                    final_result[country][city].append(hotel_data)
+                    with open(filename, "w") as f:
+                        json.dump(final_result, f, indent=4)
+                    i+=1
+                print(f"fetched {i} hotels from {city} in {country}")
+            except Exception as e:
+                print(f"no hotels found in {city} in {country}")
+                #traceback.print_exc()
+        with open("./data/results/final_result.json", "w") as f:
+                json.dump(final_result, f, indent=4)
 
 
 
