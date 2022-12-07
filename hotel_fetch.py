@@ -34,7 +34,7 @@ def update_status():
         if (current_cities_count == 0):
             current_percent = 0
         else:
-            current_percent = round(current_cities_count/total_cities_count)
+            current_percent = round((current_cities_count/total_cities_count) * 100)
         print()
         print(f"{current_percent}% complete. ({current_cities_count}/{total_cities_count}) cities fetched")
         print()
